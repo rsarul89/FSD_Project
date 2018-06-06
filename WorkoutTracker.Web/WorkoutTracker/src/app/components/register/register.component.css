@@ -1,0 +1,19 @@
+﻿
+.white {
+    color: #000;
+    background-color: #fff;
+}
+#registerForm .form-control {
+    width: 100%;
+    max-width: 100%;
+}
+
+.register-panel {
+    border-color: #162e42;
+}
+
+    .register-panel > .panel-heading {
+        color: #fff;
+        background-color: #162e42;
+        border-color: #162e42;
+    }

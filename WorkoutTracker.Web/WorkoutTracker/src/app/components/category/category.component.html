@@ -1,0 +1,41 @@
+﻿<h3 class="well header">Workout Tracker</h3>
+
+<div class="well" id="links">
+    <ul class="list-inline links">
+        <li><a routerLinkActive="active" [routerLink]="['/workout']">View All</a></li>
+        <li><a routerLinkActive="active" [routerLink]="['../workout/add']">Create</a></li>
+        <li><a routerLinkActive="active" (click)="GetAllCategories()" [ngClass]="{'disabled':!hasData() }" [attr.area-disabled]="!hasData()">Category</a></li>
+        <li><a routerLinkActive="active" [routerLink]="['/report']">Track</a></li>
+    </ul>
+
+    <h3>Add Category</h3>
+
+    <div>
+        <div class="row">
+            <div class="col-xs-10 col-md-11">
+                <input [(ngModel)]="model.category_name" [ngClass]="'addBox'" #categoryName="ngModel" required />
+            </div>
+            <div class="col-xs-2 col-md-1">
+                <a class="btn btn-info btn-wc" href="javascript:void(0)" (click)="addCategory()" [ngClass]="{'disabled':!categoryName.valid}" [attr.area-disabled]="!categoryName.valid"><span class="glyphicon glyphicon-plus"></span></a>
+            </div>
+        </div>
+        <div class="row" *ngIf="!categoryName.valid">
+            <div class="col-xs-12">
+                <span [ngClass]="'error'">Category title required.</span>
+            </div>
+        </div>
+    </div>
+
+    <input *ngIf="hasData()" [(ngModel)]="queryString" placeholder="search" [ngClass]="'searchBox'" />
+
+    <div class="category-list-container">
+        <ng-container *ngIf="hasData()">
+            <category-list *ngFor="let wc of workoutCategory | searchfilter: queryString : 'category_name'; let i=index" [category]="wc"
+                           (deleteCategory)='onDeleteCategory($event)'>
+            </category-list>
+        </ng-container>
+        <h3 *ngIf="!hasData()">No records found</h3>
+    </div>
+</div>
+
+

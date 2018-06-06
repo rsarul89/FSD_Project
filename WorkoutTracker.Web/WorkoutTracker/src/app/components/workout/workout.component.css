@@ -1,0 +1,42 @@
+﻿.workout-list-container {
+    max-height: 600px;
+    overflow: auto;
+}
+
+.header {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Merienda One', sans-serif;
+    text-align: center;
+}
+
+.links {
+    font-weight: bold;
+}
+
+    .links > li {
+        padding-right: 20px;
+        font-size: 16px;
+    }
+
+        .links > li a {
+            text-decoration: underline;
+        }
+
+.searchBox {
+    padding: 8px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border-width: 2px !important;
+    outline: none;
+}
+
+    .searchBox, .searchBox:hover {
+        color: #000 !important;
+        background-color: #f1f1f1 !important;
+    }
+
+.header, #links {
+    border: 2px solid #162e42;
+}

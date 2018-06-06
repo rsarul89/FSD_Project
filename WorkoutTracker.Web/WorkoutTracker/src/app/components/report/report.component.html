@@ -1,0 +1,65 @@
+﻿<h3 class="well header">Workout Tracker</h3>
+<div class="well" id="links">
+  <ul class="list-inline links">
+    <li><a routerLinkActive="active" [routerLink]="['/workout']">View All</a></li>
+    <li><a routerLinkActive="active" [routerLink]="['../workout/add']">Create</a></li>
+    <li><a routerLinkActive="active" [routerLink]="['/category']">Category</a></li>
+    <li><a routerLinkActive="active" [routerLink]="['/report']">Track</a></li>
+  </ul>
+  <div class="row row1">
+    <div class="pull-left">
+      <button class="btn btn-success" (click)="Prev('weekly')">Previous Week</button>
+    </div>
+    <div class="pull-right">
+      <button class="btn btn-success" (click)="Next('weekly')">Next Week</button>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Weekly Report From {{ weeklyReport.FromDate}} To {{ weeklyReport.ToDate}}</h3>
+    </div>
+    <div class="panel-body">
+      <div>
+        <canvas id="weeklyChartCanvas">{{ weeklyChart }}</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row1">
+    <div class="pull-left">
+      <button class="btn btn-success" (click)="Prev('monthly')">Previous Month</button>
+    </div>
+    <div class="pull-right">
+      <button class="btn btn-success" (click)="Next('monthly')">Next Month</button>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Monthly Report From {{ monthlyReport.FromDate}} To {{ monthlyReport.ToDate}}</h3>
+    </div>
+    <div class="panel-body">
+      <div>
+        <canvas id="monthlyChartCanvas">{{ monthlyChart }}</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row1">
+    <div class="pull-left">
+      <button class="btn btn-success" (click)="Prev('yearly')">Previous Year</button>
+    </div>
+    <div class="pull-right">
+      <button class="btn btn-success" (click)="Next('yearly')">Next Year</button>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Yearly Report From {{ yearlyReport.FromDate}} To {{ yearlyReport.ToDate}}</h3>
+    </div>
+    <div class="panel-body">
+      <div>
+        <canvas id="yearlyChartCanvas">{{ yearlyChart }}</canvas>
+      </div>
+    </div>
+  </div>
+</div>

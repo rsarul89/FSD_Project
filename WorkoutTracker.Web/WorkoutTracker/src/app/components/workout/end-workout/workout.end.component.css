@@ -1,0 +1,37 @@
+﻿
+.header {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Merienda One', sans-serif;
+  text-align: center;
+}
+
+.links {
+  font-weight: bold;
+}
+
+  .links > li {
+    padding-right: 20px;
+    font-size: 16px;
+  }
+
+    .links > li a {
+      text-decoration: underline;
+    }
+
+.header, #links {
+  border: 2px solid #162e42;
+}
+
+.custom-btn {
+  max-width: 200px;
+}
+
+.btn-wa {
+  margin-left: 5px;
+  border-radius: 0px;
+}
+
+#inputNote {
+  height: 100px;
+}

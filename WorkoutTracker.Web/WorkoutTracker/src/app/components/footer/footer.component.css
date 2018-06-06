@@ -1,0 +1,16 @@
+﻿p.footer-title{
+    margin:15px !important;
+}
+p.footer-title {
+    color: #fff;
+    font-family: 'Merienda One', sans-serif;
+}
+
+    p.footer-title i {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+.navbar-footer {
+    background-color: #162e42;
+    border-color: #162e42;
+}

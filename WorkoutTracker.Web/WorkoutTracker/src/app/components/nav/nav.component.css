@@ -1,0 +1,32 @@
+﻿.user {
+    color: #fff;
+    padding: 15px;
+}
+.navbar-toggle {
+    border: 1px solid #fff !important;
+}
+.navbar-toggle .icon-bar {
+    background: #fff;
+}
+.navbar-custom {
+    background-color: #162e42;
+    border-color: #162e42;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.nav > li > a{
+    color:#fff;
+}
+    .nav > li > a:hover, .nav > li > a:focus {
+        text-decoration: none;
+        background-color: #42616f;
+    }
+.navbar .navbar-brand {
+    color: #fff;
+    font-family: 'Merienda One', sans-serif;
+}
+
+    .navbar .navbar-brand i {
+        font-size: 20px;
+        margin-right: 5px;
+    }

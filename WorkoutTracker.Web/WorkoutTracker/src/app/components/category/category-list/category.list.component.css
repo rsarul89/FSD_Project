@@ -1,0 +1,32 @@
+﻿
+.box {
+    border: 1px solid #bbb7b7;
+    padding: 10px 5px 10px 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #f8f8f8;
+    border-left: solid 3px #f15f22;
+}
+
+    .box:hover {
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.24);
+        -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.24);
+        cursor: pointer;
+    }
+
+    .box .title {
+        /*border: 1px solid #bbb7b7;*/
+        padding: 3px 2px 3px 2px;
+        text-align: left;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 50px;
+    }
+
+    .box .list {
+        margin-top: 10px;
+    }
+
+        .box .list .btn {
+            padding: 5px 10px 5px 10px;
+        }

@@ -1,0 +1,51 @@
+﻿<h3 class="well header">Workout Tracker</h3>
+<div class="well" id="links">
+  <ul class="list-inline links">
+    <li><a href="#" routerLinkActive="active" [routerLink]="['../../../workout']">View All</a></li>
+    <li><a href="#" routerLinkActive="active" [routerLink]="['../../../workout/add']">Create</a></li>
+    <li><a href="#" routerLinkActive="active" [routerLink]="['../../../category']">Category</a></li>
+    <li><a href="#" routerLinkActive="active" [routerLink]="['../../../report']">Track</a></li>
+  </ul>
+
+  <h3>Start Workout</h3>
+
+  <form #workoutForm="ngForm" (ngSubmit)="onFormSubmit()" [ngClass]="'form-horizontal'" novalidate>
+    <div class="form-group">
+      <label for="inputTitle" class="control-label col-xs-2">Title:</label>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" id="inputTitle" #title="ngModel" placeholder="Title" name="title" [(ngModel)]="model.workout_title" readonly="readonly">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputNote" class="control-label col-xs-2">Note:</label>
+      <div class="col-xs-10">
+        <textarea class="form-control" id="inputNote" #note="ngModel" placeholder="Note" name="note" [(ngModel)]="model.workout_note" readonly="readonly"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputSd" class="control-label col-xs-2">Start Date:</label>
+      <div class="col-xs-10">
+        <input type="date" class="form-control" id="inputSd" #sd="ngModel" placeholder="Start Date" name="sd" [(ngModel)]="sdate"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputSt" class="control-label col-xs-2">Start Time:</label>
+      <div class="col-xs-10">
+        <input type="time" class="form-control" id="inputSt" #st="ngModel" placeholder="Start Time" name="st" [(ngModel)]="stime"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputBtn" class="control-label col-xs-2"></label>
+      <div class="col-xs-10">
+        <div class="row">
+          <div class="col-md-6">
+            <button class="btn btn-lg btn-success btn-block custom-btn">Start</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-lg btn-success btn-block custom-btn" type="reset" [routerLink]="['../../workout']">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="845024b521604fde9d7f19a009a347b8" Name="Diagram1">
+        <EntityTypeShape EntityType="WorkoutTrackerModel.user" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkoutTrackerModel.workout_active" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkoutTrackerModel.workout_category" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkoutTrackerModel.workout_collection" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="WorkoutTrackerModel.FK_user_workout_collection_uid" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkoutTrackerModel.FK_workout_collection_workout_active" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkoutTrackerModel.FK_workout_collection_workout_category" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
