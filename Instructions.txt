@@ -1,5 +1,0 @@
-Execute the sql files in this directory by following order in SQL Server Management Studio(Use version 2008 and above).
-
-1. 1_DataBaseCreate.sql
-2. 2_DDL.sql
-3. 3_DML.sql
