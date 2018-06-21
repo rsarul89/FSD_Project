@@ -35,9 +35,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.WebApi", "Wo
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Web", "WorkoutTracker.Web\WorkoutTracker.Web.csproj", "{BDAD29B5-6A4B-4383-9D6C-AB7E88EA6EB2}"
-	ProjectSection(ProjectDependencies) = postProject
-		{0D29B78D-0A54-4383-A552-D3A35FE21A30} = {0D29B78D-0A54-4383-A552-D3A35FE21A30}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.RepositoriesTests", "WorkoutTracker.RepositoriesTests\WorkoutTracker.RepositoriesTests.csproj", "{CC9EDD35-DCDA-4643-B6CB-8E8CC73C9891}"
 EndProject

@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Web.Http;
 using WorkoutTracker.WebApi.Models;
 using System.Net;
+using System.Diagnostics;
 
 namespace WorkoutTracker.WebApi.Controllers.Tests
 {
@@ -315,6 +316,114 @@ namespace WorkoutTracker.WebApi.Controllers.Tests
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             Assert.AreNotEqual(null, result);
             response.Dispose();
+        }
+
+        [TestMethod()]
+        public void N_WorkoutAddPerformanceTest()
+        {
+            int noOfCalls = 500;
+            double expectedTime = 1;
+            WorkoutCollection result;
+            var cat = categoryService.GetWorkoutCategories().FirstOrDefault();
+            var user = _userService.GetUsers().FirstOrDefault();
+            var catCon = Helper.CastObject<WorkoutCategory>(cat);
+            var userCon = Helper.CastObject<User>(user);
+            var controller = new WorkoutTrackerController(workoutService, categoryService, _logManager);
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            for (int i = 0; i < noOfCalls; i++)
+            {
+                WorkoutCollection wc = new WorkoutCollection()
+                {
+                    workout_id = 0,
+                    workout_title = "TestApiWorkout_LoadTest" + i.ToString(),
+                    workout_note = "MockUser",
+                    workout_category = catCon,
+                    workout_active = null,
+                    calories_burn_per_min = i * 10,
+                    category_id = catCon.category_id,
+                    user = userCon,
+                    user_id = userCon.user_id
+                };
+                controller.Request = new HttpRequestMessage();
+                controller.Configuration = new HttpConfiguration();
+                controller.Request.Headers.Add("Accept", "application/json");
+                var response = controller.AddWorkout(wc);
+                result = response.Content.ReadAsAsync<WorkoutCollection>().Result;
+                response.Dispose();
+            }
+            stopwatch.Stop();
+            var res = stopwatch.Elapsed.TotalMinutes <= expectedTime;
+            Assert.IsTrue(res);
+        }
+
+        [TestMethod()]
+        public void O_WorkoutLoadTest()
+        {
+            double expectedTime = 1;
+            var locker = new Object();
+            int count = 0;
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            System.Threading.Tasks.Parallel.For
+                (0
+             , 1000
+             , new System.Threading.Tasks.ParallelOptions { MaxDegreeOfParallelism = 5 }
+             , (i) =>
+             {
+                 System.Threading.Interlocked.Increment(ref count);
+                 lock (locker)
+                 {
+                     IEnumerable<WorkoutCollection> result;
+                     var user = _userService.GetUsers().FirstOrDefault();
+                     var controller = new WorkoutTrackerController(workoutService, categoryService, _logManager);
+                     var input = Helper.CastObject<User>(user);
+                     controller.Request = new HttpRequestMessage();
+                     controller.Configuration = new HttpConfiguration();
+                     controller.Request.Headers.Add("Accept", "application/json");
+                     var response = controller.GetAllWorkOutsByUser(input);
+                     result = response.Content.ReadAsAsync<IEnumerable<WorkoutCollection>>().Result;
+                     response.Dispose();
+                     System.Threading.Thread.Sleep(10);
+                 }
+                 System.Threading.Interlocked.Decrement(ref count);
+             }
+            );
+
+            stopwatch.Stop();
+            var res = stopwatch.Elapsed.TotalMinutes <= expectedTime;
+            Assert.IsTrue(res);
+        }
+
+        [TestMethod()]
+        public void P_WorkoutDeletePerformanceTest()
+        {
+            double expectedTime = 1;
+            WorkoutCollection result;
+            var workouts = workoutService.GetWorkouts().Where(w => w.workout_note.Equals("MockUser", StringComparison.InvariantCultureIgnoreCase)).ToList();
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            if (workouts != null && workouts.Count() > 0)
+            {
+                System.Threading.Tasks.Parallel.ForEach(workouts, workout =>
+                {
+                    var controller = new WorkoutTrackerController(workoutService, categoryService, _logManager);
+                    var input = Helper.CastObject<WorkoutCollection>(workout);
+                    controller.Request = new HttpRequestMessage();
+                    controller.Configuration = new HttpConfiguration();
+                    controller.Request.Headers.Add("Accept", "application/json");
+                    var response = controller.DeleteWorkout(input);
+                    result = response.Content.ReadAsAsync<WorkoutCollection>().Result;
+                    response.Dispose();
+
+                });
+            }
+
+            stopwatch.Stop();
+            var res = stopwatch.Elapsed.TotalMinutes <= expectedTime;
+            Assert.IsTrue(res);
         }
     }
 }
