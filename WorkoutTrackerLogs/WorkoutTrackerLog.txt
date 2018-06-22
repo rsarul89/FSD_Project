@@ -1182,3 +1182,16 @@ Source: System.Data.Entity
 TargetSite: Void CheckReferentialConstraintProperties(System.Data.Objects.EntityEntry)
 -----------------------------------------------------------
 
+Time: 22/06/2018 11:51:47 AM
+-----------------------------------------------------------
+Message: An error occurred while updating the entries. See the inner exception for details.
+StackTrace:    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at WorkoutTracker.Repositories.UnitOfWork.Commit() in D:\FSD\WorkoutTracker\WorkoutTracker.Repositories\Common\UnitOfWork.cs:line 33
+   at WorkoutTracker.Services.WorkoutCollectionService.StartWorkout(workout_active wa) in D:\FSD\WorkoutTracker\WorkoutTracker.Services\WorkoutCollectionService\WorkoutCollectionService.cs:line 25
+   at WorkoutTracker.WebApi.Controllers.WorkoutTrackerController.StartWorkout(WorkoutActive wa) in D:\FSD\WorkoutTracker\WorkoutTracker.WebApi\Controllers\WorkoutTrackerController.cs:line 233
+Source: EntityFramework
+TargetSite: Int32 SaveChanges()
+-----------------------------------------------------------
+

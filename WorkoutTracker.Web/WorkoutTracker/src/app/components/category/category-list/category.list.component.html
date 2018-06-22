@@ -5,8 +5,8 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-10">
             <ul class="list-inline list">
-                <li><a class="btn btn-md btn-success btn-block" href="#" routerLinkActive="active" [routerLink]="['edit/',category.category_id]"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;Edit</a></li>
-                <li><a class="btn btn-md btn-success btn-block" href="#" routerLinkActive="active" (click)="DeleteCategory(category)"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Delete</a></li>
+                <li><a class="btn btn-md btn-success btn-block edit-cat" href="#" routerLinkActive="active" [routerLink]="['edit/',category.category_id]"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;Edit</a></li>
+                <li><a class="btn btn-md btn-success btn-block delete-cat" href="#" routerLinkActive="active" (click)="DeleteCategory(category)"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Delete</a></li>
             </ul>
         </div>
     </div>

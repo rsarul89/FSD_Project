@@ -17,7 +17,7 @@ import { AppSettings } from '../../../shared/index';
 
 export class CategoryEditComponent implements OnInit, OnDestroy {
 
-    private id: number;
+    public id: number;
     private sub: Subscription;
     public model: WorkoutCategory;
 

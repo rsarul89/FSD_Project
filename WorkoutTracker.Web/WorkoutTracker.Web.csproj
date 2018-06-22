@@ -288,6 +288,7 @@
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\category\edit-category\category.edit.component.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\category\edit-category\index.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\category\index.ts" />
+    <TypeScriptCompile Include="WorkoutTracker\src\app\components\footer\footer.component.spec.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\footer\footer.component.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\footer\index.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\login\index.ts" />
@@ -299,7 +300,9 @@
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\report\index.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\report\report.component.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\spinner\index.ts" />
+    <TypeScriptCompile Include="WorkoutTracker\src\app\components\spinner\spinner.component.spec.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\spinner\spinner.component.ts" />
+    <TypeScriptCompile Include="WorkoutTracker\src\app\components\spinner\spinner.service.spec.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\spinner\spinner.service.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\workout\add-workout\add.workout.component.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\components\workout\add-workout\index.ts" />
@@ -342,6 +345,7 @@
     <TypeScriptCompile Include="WorkoutTracker\src\app\services\workout.service.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\shared\app.settings.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\app\shared\index.ts" />
+    <TypeScriptCompile Include="WorkoutTracker\src\app\testing\router-link-directive-stub.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\environments\environment.ts" />
     <TypeScriptCompile Include="WorkoutTracker\src\main.ts" />

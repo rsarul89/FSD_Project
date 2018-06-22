@@ -1,10 +1,10 @@
 ﻿<div class="box">
     <span class="title">{{workout.workout_title}}</span>
     <ul class="list-inline list">
-        <li><a class="btn btn-md btn-success btn-block" href="#" routerLinkActive="active" (click)="Edit(workout)"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;Edit</a></li>
-        <li><a class="btn btn-md btn-success btn-block" href="#" routerLinkActive="active" (click)="DeleteWorkout(workout)"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Delete</a></li>
-        <li><a class="btn btn-md btn-success btn-block" href="#" routerLinkActive="active" [ngClass]="{'disabled':StartButtonEnableDisable(workout)}" [attr.area-disabled]="StartButtonEnableDisable(workout)" (click)="StartWorkout(workout)"><i class="fa fa-play-circle" aria-hidden="true"></i>&nbsp;Start</a></li>
-        <li><a class="btn btn-md btn-success btn-block" href="#" routerLinkActive="active" [ngClass]="{'disabled':EndButtonEnableDisable(workout)}" [attr.area-disabled]="EndButtonEnableDisable(workout)" (click)="EndWorkout(workout)"><i class="fa fa-stop-circle" aria-hidden="true"></i>&nbsp;End</a></li>
+        <li><a class="btn btn-md btn-success btn-block edit-workout" href="#" routerLinkActive="active" (click)="Edit(workout)"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;Edit</a></li>
+        <li><a class="btn btn-md btn-success btn-block delete-workout" href="#" routerLinkActive="active" (click)="DeleteWorkout(workout)"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Delete</a></li>
+        <li><a class="btn btn-md btn-success btn-block start-workout" href="#" routerLinkActive="active" [ngClass]="{'disabled':StartButtonEnableDisable(workout)}" [attr.area-disabled]="StartButtonEnableDisable(workout)" (click)="StartWorkout(workout)"><i class="fa fa-play-circle" aria-hidden="true"></i>&nbsp;Start</a></li>
+        <li><a class="btn btn-md btn-success btn-block end-workout" href="#" routerLinkActive="active" [ngClass]="{'disabled':EndButtonEnableDisable(workout)}" [attr.area-disabled]="EndButtonEnableDisable(workout)" (click)="EndWorkout(workout)"><i class="fa fa-stop-circle" aria-hidden="true"></i>&nbsp;End</a></li>
     </ul>
 </div>
 

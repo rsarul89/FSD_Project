@@ -7,7 +7,7 @@
     <li><a href="#" routerLinkActive="active" [routerLink]="['../../../report']">Track</a></li>
   </ul>
 
-  <h3>Edit Workout</h3>
+  <h3 id="editWorkoutHeader">Edit Workout</h3>
 
   <form #workoutForm="ngForm" (ngSubmit)="onFormSubmit()" [ngClass]="'form-horizontal'" novalidate>
     <div class="form-group">
@@ -34,7 +34,7 @@
     <div class="form-group">
       <label for="inputBtn" class="control-label col-xs-2"></label>
       <div class="col-xs-10">
-        <button class="btn btn-lg btn-success btn-block custom-btn">Update</button>
+        <button class="btn btn-lg btn-success btn-block custom-btn btn-update">Update</button>
       </div>
     </div>
   </form>

@@ -1,4 +1,4 @@
-{
+﻿{
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
@@ -9,5 +9,11 @@
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
+  ],
+  "include": [
+    "/src/environments/environment.ts",
+    "main.ts",
+    "polyfills.ts",
+    "typings.d.ts"
   ]
 }
