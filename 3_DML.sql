@@ -10,12 +10,10 @@ GO
 
 INSERT INTO [dbo].[workout_category]
 (
-category_id
-,[category_name]
+[category_name]
 )
 VALUES
 (
-NULL,
 'DemoCategory'
 )
 GO

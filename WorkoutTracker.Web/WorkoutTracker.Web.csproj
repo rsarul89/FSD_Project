@@ -150,19 +150,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bundles\3rdpartylicenses.txt" />
-    <Content Include="Bundles\favicon.ico" />
-    <Content Include="Bundles\glyphicons-halflings-regular.448c34a56d699c29117a.woff2" />
-    <Content Include="Bundles\glyphicons-halflings-regular.89889688147bd7575d63.svg" />
-    <Content Include="Bundles\glyphicons-halflings-regular.e18bbf611f2a2e43afc0.ttf" />
-    <Content Include="Bundles\glyphicons-halflings-regular.f4769f9bdb7466be6508.eot" />
-    <Content Include="Bundles\glyphicons-halflings-regular.fa2772327f55d8198301.woff" />
-    <Content Include="Bundles\index.html" />
-    <Content Include="Bundles\inline.318b50c57b4eba3d437b.bundle.js" />
-    <Content Include="Bundles\main.e4db45c91ae74ce8a972.bundle.js" />
-    <Content Include="Bundles\polyfills.3b62166b1130a1e3b571.bundle.js" />
-    <Content Include="Bundles\scripts.e2cc764d74d6cb8d1c42.bundle.js" />
-    <Content Include="Bundles\styles.1db1ad724b0eaca3a6cc.bundle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -235,6 +222,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Bundles\" />
     <Folder Include="Models\" />
     <Folder Include="WorkoutTracker\dist\out-tsc\e2e\" />
     <Folder Include="WorkoutTracker\dist\out-tsc\src\app\components\category\category-list\" />
